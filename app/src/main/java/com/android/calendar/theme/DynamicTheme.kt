@@ -35,7 +35,7 @@ fun AppCompatActivity.applyTheme() {
     }
 
     // Setup edge to edge
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+    if (Build.VERSION.SDK_INT >= 35) {
         setupEdgeToEdge(this)
     }
 
@@ -167,7 +167,7 @@ fun isSystemInDarkTheme(context: Context): Boolean {
         .configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) == Configuration.UI_MODE_NIGHT_YES
 }
 
-@RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
+@RequiresApi(35)
 private fun setupEdgeToEdge(activity: Activity) {
     val window = activity.window
     val rootView = activity.window.decorView.rootView
@@ -188,7 +188,7 @@ private fun setupEdgeToEdge(activity: Activity) {
     setSystemBarsColors(activity)
 }
 
-@RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
+@RequiresApi(35)
 private fun setSystemBarsColors(activity: Activity) {
     val lightAppearance = !isSystemInDarkTheme(activity)
     val rootView = activity.window.decorView.rootView
