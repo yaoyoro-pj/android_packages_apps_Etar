@@ -27,7 +27,6 @@ android_app {
         "androidx-constraintlayout_constraintlayout",
         "androidx.core_core-ktx",
         "Etar-Calendar_androidx.databinding_viewbinding",
-        "androidx.graphics_graphics-shapes",
         "androidx.lifecycle_lifecycle-livedata-ktx",
         "androidx.lifecycle_lifecycle-runtime",
         "androidx.lifecycle_lifecycle-runtime-ktx",
