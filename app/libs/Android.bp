@@ -1,5 +1,5 @@
 //
-// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-FileCopyrightText: 2023-2025 The LineageOS Project
 // SPDX-License-Identifier: Apache-2.0
 //
 
@@ -20,42 +20,78 @@ android_library_import {
 }
 
 java_import {
-    name: "Etar-Calendar_org.dmfs_jems2",
+    name: "Etar-Calendar_org.dmfs_jems2-nodeps",
     jars: ["org/dmfs/jems2/2.23.1/jems2-2.23.1.jar"],
     sdk_version: "34",
-    min_sdk_version: "23",
+    min_sdk_version: "14",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
-    ],
-    static_libs: [
     ],
 }
 
-java_import {
-    name: "Etar-Calendar_org.dmfs_lib-recur",
-    jars: ["org/dmfs/lib-recur/0.17.1/lib-recur-0.17.1.jar"],
+java_library_static {
+    name: "Etar-Calendar_org.dmfs_jems2",
     sdk_version: "34",
-    min_sdk_version: "23",
+    min_sdk_version: "14",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
     static_libs: [
+        "Etar-Calendar_org.dmfs_jems2-nodeps",
+    ],
+    java_version: "1.7",
+}
+
+java_import {
+    name: "Etar-Calendar_org.dmfs_lib-recur-nodeps",
+    jars: ["org/dmfs/lib-recur/0.17.1/lib-recur-0.17.1.jar"],
+    sdk_version: "34",
+    min_sdk_version: "14",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+}
+
+java_library_static {
+    name: "Etar-Calendar_org.dmfs_lib-recur",
+    sdk_version: "34",
+    min_sdk_version: "14",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+    static_libs: [
+        "Etar-Calendar_org.dmfs_lib-recur-nodeps",
         "Etar-Calendar_org.dmfs_jems2",
         "Etar-Calendar_org.dmfs_rfc5545-datetime",
     ],
+    java_version: "1.7",
 }
 
 java_import {
-    name: "Etar-Calendar_org.dmfs_rfc5545-datetime",
+    name: "Etar-Calendar_org.dmfs_rfc5545-datetime-nodeps",
     jars: ["org/dmfs/rfc5545-datetime/0.3/rfc5545-datetime-0.3.jar"],
     sdk_version: "34",
-    min_sdk_version: "23",
+    min_sdk_version: "14",
+    apex_available: [
+        "//apex_available:platform",
+        "//apex_available:anyapex",
+    ],
+}
+
+java_library_static {
+    name: "Etar-Calendar_org.dmfs_rfc5545-datetime",
+    sdk_version: "34",
+    min_sdk_version: "14",
     apex_available: [
         "//apex_available:platform",
         "//apex_available:anyapex",
     ],
     static_libs: [
+        "Etar-Calendar_org.dmfs_rfc5545-datetime-nodeps",
     ],
+    java_version: "1.7",
 }
